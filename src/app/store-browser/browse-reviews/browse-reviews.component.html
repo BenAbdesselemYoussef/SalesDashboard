@@ -1,0 +1,38 @@
+<div class="row" *ngFor="let opinion of opinions">
+    <div class="col-2" style="text-align: center; margin-bottom: 5px;">
+        <div class="user-avatar">
+            <img [src]="opinion.user.logo" style="border-radius: 50%; height: 50px; width: 50px;">
+            <p>{{opinion.user.firstname}} {{opinion.user.lastname}}</p>
+        </div>
+    </div>
+    <div class="col-8" style="margin-bottom: 5px;">
+        <div class="white-box user-opinion" style="border-radius: 8px;border-style: solid; border-width: 1px; border-color: grey; box-shadow: 5px 2px grey;">
+            <div *ngIf="opinion.review !== undefined">
+                <p>{{opinion.review.content}}</p>
+                <a (click)="reportReview(opinion)" style="position: absolute; right: 300px; cursor: pointer;"><i class="fa fa-exclamation"></i></a>
+            </div>
+            <div *ngIf="opinion.rating !== undefined">
+                <p> Rated this Store as a {{opinion.rating.score}}<i class="fa fa-star"></i> Store</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div>
+    <button type="submit" *ngIf="!wantsToOpinion" (click)="toogleWantsToOpinion()" class="btn btn-info" style="width: 50%;">Post Your Opinion</button>
+    <button type="submit" *ngIf="wantsToOpinion" (click)="toogleWantsToOpinion()" class="btn btn-warning" style="width: 50%;">Hide Opinion Section</button>
+    <div *ngIf="wantsToOpinion" style="margin-top: 1%;">
+        <div class="mb-3 form-group">
+            <label for="content" class="form-label">Review:</label>
+            <textarea class="form-control" placeholder="Write the content of your Review" [(ngModel)]="content" name="description"
+                id="content"></textarea>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="score" class="form-label">Rating</label>
+            <input type="number" class="form-control" id="score" [(ngModel)]="score" name="score" min="0" max="5"
+                aria-describedby="scoreHelp">
+            <div id="scoreHelp" class="form-text">here you rate the store from 1 to 5.</div>
+        </div>
+        <button (click)="PostOpinion()" class="btn btn-info" style="width: 30%;">Post Opinion</button>
+    </div>
+</div>

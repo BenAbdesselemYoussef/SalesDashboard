@@ -1,0 +1,45 @@
+<div class="all" style="padding-top: 10px;">
+<div class="white-box">
+    <div class="row">
+        <div class="col" style="white-space: nowrap;margin-left: 10px; margin-top: 25px;">
+            <p class="text-searchbar">Search a Store using</p>
+        </div>
+        <div class="col" style="margin-top: 10px;">
+            <mat-form-field appearance="fill" style="margin-right: 20px;">
+                <mat-label>Choose searching criteria</mat-label>
+                <mat-select>
+                <mat-option *ngFor="let selectorelm of selectorList" [value]="selectorelm">{{selectorelm}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-6" style="margin-top: 10px;">
+            <input type="text" class="custom-text">
+        </div>
+        <div class="col" style="margin-top: 10px;margin-left: 10px;">
+            <a (click)="search()">
+                <i class="fa fa-search" style="font-size: 3em; color:#ffc36d;"></i>
+            </a>
+        </div>
+    </div>
+    
+</div>
+<div class="white-box">
+    <div fxLayout="row wrap" class="row cards-container">
+    <div fxFlex="25%" *ngFor="let store of storesinit">
+    <mat-card class="example-card" (click)="visitstore(store)">
+        <img mat-card-image height="170px" [src]="store.logo" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <h1>{{store.name}}</h1>
+            <p>
+            {{store.description}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button (click)="visitstore(store)" class="mat-card-action" mat-button>Visit</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    </div>
+</div>
+
+</div>

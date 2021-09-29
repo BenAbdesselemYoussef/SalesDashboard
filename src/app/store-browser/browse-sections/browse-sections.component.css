@@ -1,0 +1,106 @@
+.white-box {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.all {
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 10px;
+}
+
+.banner {
+  width: 100%;
+  text-align: center;
+}
+
+.action-icons {
+  font-size: 70px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.action-like:hover {
+  color: #e85b31;
+}
+
+.action-command:hover {
+  color: #ffc36d;
+}
+
+.action-reviews:hover {
+  color: #10bbf9;
+}
+
+.sections {
+  text-align: center;
+}
+
+.section {
+  border-style: none;
+}
+.unselected-section {
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+}
+.unselected-section:hover {
+  color: #e85b31;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+}
+.selected-section {
+  cursor: pointer;
+  padding-bottom: 5px;
+  color: #e85b31;
+  border-style: solid;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.example-card {
+  min-width: 100px;
+  height: 350px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+}
+
+.sections {
+  margin-bottom: 30px;
+}
+
+.mat-card-action {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #10bbf9;
+}
+.mat-card-action-quantity:disabled {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  color: #e85b31;
+}
+
+.nop {
+  background-color: #e85b31;
+  color: white;
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  top: 360px;
+  right: 120px;
+  text-align: center;
+}
+
+.enlargable:hover {
+  position: absolute;
+  top: 0;
+  width: 110%;
+  height: 110%;
+}

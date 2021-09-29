@@ -1,0 +1,29 @@
+.gray-box {
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.bill {
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.custom-text {
+  background-color: rgba(0, 0, 0, 0.005);
+  height: 40px;
+  width: 100%;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 1px;
+  border-style: solid;
+  font-size: x-large;
+}
+
+.bill-order {
+  color: #10bbf9;
+}

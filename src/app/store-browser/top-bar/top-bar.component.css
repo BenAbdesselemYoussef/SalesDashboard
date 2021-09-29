@@ -1,0 +1,44 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.mat-toolbar {
+  background: #10bbf9;
+  color: #fff;
+}
+.mat-expansion-panel {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  top: 0px;
+}
+.expandable-content {
+  position: absolute;
+  top: 60px;
+  right: 2px;
+  background-color: white;
+  border-radius: 10px;
+  border-color: #10bbf9;
+  border-width: 1px;
+  border-style: solid;
+  width: 150px;
+}
+.row a i {
+  margin-right: 10px;
+  color: #ffc36d;
+  margin-left: 5px;
+}
+hr {
+  color: #10bbf9;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.row a span {
+  color: black;
+  font-size: 14px;
+}
+.content-browse {
+  height: 1000px;
+  width: 100%;
+  background-color: #edf1f5;
+  background-size: cover;
+}

@@ -1,0 +1,34 @@
+<div class="all">
+    <div class="white-box store-details">
+        <div class="banner">
+            <img width="100%" height="250px" [src]="store.logo">
+        </div>
+        <div class="row">
+            <div class="col clickable-text" (click)="returnToStore()">
+                    <h1 style="font-size: xx-large;">{{store.name}}</h1>
+                <div class="row">
+                    <div class="col">
+                        <i style="display: inline-block; font-size: x-large;" class="fa fa-star rating-icons" aria-hidden="true"></i>
+                        <h1 style="display: inline-block;">4.5</h1>
+                    </div> 
+                    <div class="col"> 
+                        <h1>407 votes</h1>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-6"></div>
+            <div class="col">
+                <a style="color: #313131;"><i class="fa fa-heart action-icons action-like" aria-hidden="true"></i></a>
+                <a style="color: #313131;" routerLink="reviews"><i class="fa fa-comments action-icons action-reviews" aria-hidden="true"></i></a>
+                <a style="color: #313131;" routerLink="order"><i class="fa fa-shopping-cart action-icons action-command" aria-hidden="true"></i><span class="nop">{{count}}</span></a>
+            </div>
+        </div>
+        <div class="row">
+            <h2 style="font-weight: lighter;">{{store.description}}</h2>
+        </div>
+    </div>
+    <div class="white-box">
+        <router-outlet></router-outlet>
+    </div>
+</div>

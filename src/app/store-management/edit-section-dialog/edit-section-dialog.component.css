@@ -1,0 +1,8 @@
+.dialog-header {
+  font-size: larger;
+  width: 100%;
+}
+.dialog-content {
+  overflow: auto;
+  height: 450px;
+}

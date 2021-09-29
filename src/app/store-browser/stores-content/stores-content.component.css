@@ -1,0 +1,48 @@
+.white-box {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.text-searchbar {
+  font-size: 18px;
+}
+.all {
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+}
+.custom-text {
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 50px;
+  width: 100%;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 1px;
+  border-style: solid;
+}
+.example-card {
+  min-width: 100px;
+  height: 350px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.mat-card-action {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #10bbf9;
+}
+
+.cards-container {
+  text-align: center;
+  overflow: auto;
+}

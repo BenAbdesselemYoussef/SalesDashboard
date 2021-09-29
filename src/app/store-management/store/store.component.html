@@ -1,0 +1,30 @@
+<div class="white-box">
+    <div *ngIf="storefound">
+        <h3>Store Settings</h3>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" [placeholder]="store.name" id="storename"
+                    aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">here you change the name of your store name.</div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" [placeholder]="store.description"
+                    id="description"></textarea>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="status" [checked]="store.open">
+                <label class="form-check-label" for="status">Open</label>
+            </div>
+            <div class="mb-3">
+                <label for="logo" class="form-label">Logo</label>
+                <input class="form-control" type="file" id="logo">
+            </div>
+            <button type="submit" class="btn btn-info" style="width: 50%;">Save</button>
+        </form>
+    </div>
+    <div *ngIf="!storefound" style="text-align: center;">
+        <button class="btn btn-info" style="width:50%;"> Create your own store </button>
+    </div>
+</div>

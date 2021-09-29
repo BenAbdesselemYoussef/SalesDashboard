@@ -1,0 +1,46 @@
+<div class="dialog-header accent-background">
+    <span class="dialog-header-title">Add Product</span>
+    <hr>
+</div>
+<div class="dialog-content">
+    <form #productForm="ngForm">
+        <div class="mb-3 form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="ex: shampoo" id="productname" [(ngModel)]="product.name" name="name"
+                aria-describedby="nameHelp">
+            <div id="nameHelp" class="form-text">here you define the name of your product.</div>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" placeholder="ex: anti pelicular shampoo for smooth hair" [(ngModel)]="product.description" name="description"
+                id="description"></textarea>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="productquantity" [(ngModel)]="product.quantity" name="quantity" value="0"
+                aria-describedby="quantityHelp">
+            <div id="quantityHelp" class="form-text">here you set the quantity in stock of your product.</div>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="productprice" [(ngModel)]="product.unitprice" name="unitprice" value="0"
+                aria-describedby="priceHelp">
+            <div id="priceHelp" class="form-text">here you define the the unit price of your product in TD.</div>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="price" class="form-label">Weight</label>
+            <input type="number" class="form-control" id="productweight" [(ngModel)]="product.weight" name="weight" value="0"
+                aria-describedby="weightHelp">
+            <div id="weightHelp" class="form-text">here you define the the weight of your product in g please be precise.</div>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="logo" class="form-label">Logo</label>
+            <input class="form-control" type="file" id="logo" (change)="logochange($event)" name="logo">
+            <div id="logoHelp" class="form-text">the logo you choose will be uploaded so this may take a while</div>
+        </div>
+    </form>
+  </div>
+  <div class="dialog-footer">
+    <button class="btn btn-warning" style="width:40%; margin-right: 5%;" mat-raised-button [mat-dialog-close]="false">cancel</button>
+    <button class="btn btn-info" style="width:40%;" mat-raised-button [mat-dialog-close]="true" (click)="showdata()">save</button>
+  </div>

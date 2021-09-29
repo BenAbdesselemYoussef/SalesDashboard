@@ -1,0 +1,52 @@
+<div class="white-box">
+    <label for="id" class="form-label">Store Id</label>
+    <input type="text" class="form-control" id="storeID" [(ngModel)]="storeID" name="name" aria-describedby="idHelp">
+    <div id="idHelp" class="form-text">type the id here and the result will be shown in the table bellow</div>
+    <button (click)="searchproduct()" class="btn btn-info" style="width:40%;margin-right: 10px;" mat-raised-button>search</button>
+    <button (click)="clearsearch()" class="btn btn-warning" style="width:40%" mat-raised-button>clear</button>
+</div>
+<div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="white-box">
+            <div class="d-md-flex mb-3">
+                <h3 class="box-title mb-0">Stores</h3>
+                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                    <select class="form-select shadow-none row border-top">
+                        <option>March 2021</option>
+                        <option>April 2021</option>
+                        <option>May 2021</option>
+                        <option>June 2021</option>
+                        <option>July 2021</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table no-wrap">
+                    <thead>
+                        <tr>
+                            <th class="border-top-0">#</th>
+                            <th class="border-top-0">Logo</th>
+                            <th class="border-top-0">Name</th>
+                            <th class="border-top-0">Open</th>
+                            <th class="border-top-0">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of datas">
+                            <td>{{data.index}}</td>
+                            <td class="txt-oflo"><img width="100px" height="70px" [src]="data.logo"></td>
+                            <td>{{data.name}}</td>
+                            <td *ngIf="data.open"><i class="fa fa-check" style="color:#2c9422;"></i></td>
+                            <td *ngIf="!data.open"><i class="fa fa-times-circle" style="color:#f85f18;"></i></td>
+                            <td>
+                                <div>
+                                    <a (click)="BanDialog(data)"><i class="fa fa-ban" style="color:#f85f18;"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

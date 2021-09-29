@@ -1,0 +1,49 @@
+<div class="white-box">
+    <label for="id" class="form-label">Order Id</label>
+    <input type="text" class="form-control" id="orderID" [(ngModel)]="orderId" name="name" aria-describedby="idHelp">
+    <div id="idHelp" class="form-text">type the id here and the result will be shown in the table bellow</div>
+    <button (click)="searchproduct()" class="btn btn-info" style="width:40%;margin-right: 10px;" mat-raised-button>search</button>
+    <button (click)="clearsearch()" class="btn btn-warning" style="width:40%" mat-raised-button>clear</button>
+</div>
+<div class="content">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="white-box">
+                <div class="d-md-flex mb-3">
+                    <h3 class="box-title mb-0">Orders</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table no-wrap">
+                        <thead>
+                            <tr>
+                                <th class="border-top-0">#</th>
+                                <th class="border-top-0">Status</th>
+                                <th class="border-top-0">NOP</th>
+                                <th class="border-top-0">Total Price</th>
+                                <th class="border-top-0">Total Weight</th>
+                                <th class="border-top-0">Buyer</th>
+                                <th class="border-top-0">Vendor</th>
+                                <th class="border-top-0">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of datas">
+                                <td>{{data.index}}</td>
+                                <td>{{data.status}}</td>
+                                <td class="txt-oflo">{{data.nop}}</td>
+                                <td><span class="text-success">{{data.totalprice}}TND</span></td>
+                                <td class="txt-oflo">{{data.totalweight}}g</td>
+                                <td class="txt-oflo">{{data.buyer}}</td>
+                                <td class="txt-oflo">{{data.vendor}}</td>
+                                <td class="txt-oflo" *ngIf="(data.status === shipped) || (data.status === shipping) || (data.status === pending)"><a (click)="openOrderDetailsDialog(data)"><i class="fa fa-info-circle" style="color:gray;"></i></a></td>
+                                <td class="txt-oflo" *ngIf="(data.status === arrived)"><a (click)="openOrderDetailsDialog(data)"><i class="fa fa-info-circle" style="color:#f8c218;"></i></a></td>
+                                <td class="txt-oflo" *ngIf="(data.status === delivered)"><a (click)="openOrderDetailsDialog(data)"><i class="fa fa-info-circle" style="color:green;"></i></a></td>
+                                <td class="txt-oflo" *ngIf="(data.status === cancelled)"><a (click)="openOrderDetailsDialog(data)"><i class="fa fa-info-circle" style="color:red;"></i></a></td>
+                            </tr>   
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="white-box">
+    <div class="row">
+        <div class="col">
+            <label for="id" class="form-label">Section Id</label>
+            <input type="text" class="form-control" id="sectionID" [(ngModel)]="sectionID" name="name" aria-describedby="idHelp">
+            <div id="idHelp" class="form-text">type the id here and the result will be shown in the table bellow</div></div>
+        <div class="col">
+            <label for="storeid" class="form-label">Store Id</label>
+            <input type="text" class="form-control" id="storeID" [(ngModel)]="storeID" name="name" aria-describedby="idstoreHelp">
+            <div id="idstoreHelp" class="form-text">type the id of the store here and the result will be shown in the table bellow</div></div>
+    </div>
+    
+    <button (click)="searchproduct()" class="btn btn-info" style="width:40%;margin-right: 10px;" mat-raised-button>search</button>
+    <button (click)="clearsearch()" class="btn btn-warning" style="width:40%" mat-raised-button>clear</button>
+</div>
+<div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="white-box">
+            <div class="d-md-flex mb-3">
+                <h3 class="box-title mb-0">Sections</h3>
+                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                    <select class="form-select shadow-none row border-top">
+                        <option>March 2021</option>
+                        <option>April 2021</option>
+                        <option>May 2021</option>
+                        <option>June 2021</option>
+                        <option>July 2021</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table no-wrap">
+                    <thead>
+                        <tr>
+                            <th class="border-top-0">#</th>
+                            <th class="border-top-0">Name</th>
+                            <th class="border-top-0">Number of Products</th>
+                            <th class="border-top-0">Store Id</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of datas">
+                            <td>{{data.index}}</td>
+                            <td>{{data.name}}</td>
+                            <td>{{data.nop}}</td>
+                            <td>{{data.store}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

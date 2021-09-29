@@ -1,0 +1,75 @@
+<div *ngIf="orderloaded && orderfound">
+    <div class="row">
+        <div class="col-9">
+            <div class="row gray-box" *ngFor="let batch of order">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-5">
+                            <h1>Product Name:</h1>
+                        </div>
+                        <div class="col">
+                            <h1>{{batch.product.name}}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <h1>Quantity:</h1>
+                        </div>
+                        <div class="col-8">
+                            <input (change)="recalculate()" type="number" [(ngModel)]="batch.quantity" min="1" [max]="batch.product.quantity" class="custom-text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <button  mat-button><i class="fa fa-trash-alt" style="color:#f85f18; font-size: x-large;"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="bill">
+                <div class="row">
+                    <div class="col">
+                        <h3>Products Price:</h3>
+                    </div>
+                    <div class="col">
+                        <h3>{{totalprice}} TND</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h3>Products Weight:</h3>
+                    </div>
+                    <div class="col">
+                        <h3>2000 g</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h3>Shippment Fee:</h3>
+                    </div>
+                    <div class="col">
+                        <h3>{{shippmentfee}} TND</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h1>Total:</h1>
+                    </div>
+                    <div class="col">
+                        <h1>{{total}} TND</h1>
+                    </div>
+                </div>
+                <button mat-button class="bill-order" style="color: #10bbf9;">Order</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div *ngIf="!orderloaded">
+    <p>loading</p>
+</div>
+<div *ngIf="orderloaded && !orderfound">
+    <p>you still haven't ordered anything yet</p>
+</div>

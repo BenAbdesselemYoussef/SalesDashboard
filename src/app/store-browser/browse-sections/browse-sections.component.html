@@ -1,0 +1,27 @@
+<div class="row sections">
+    <div class="col" *ngFor="let section of sections">
+        <a [ngClass]="{
+            'selected-section' : section.name == selectedsection,
+            'unselected-section' : section.name != selectedsection 
+            }" (click)="selectSection(section)">
+            {{section.name}}
+        </a>
+    </div>
+</div>
+<div fxLayout="row wrap" class="row products">
+    <div fxFlex="25%" *ngFor="let product of sections[selectedsectionindex].products">
+        <mat-card class="example-card">
+            <img mat-card-image height="170px" class="enlargable" [src]="product.logo" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <h1>{{product.name}}</h1>
+                <p>
+                {{product.description}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button (click)="openProductDetails(product)" class="mat-card-action" mat-button>{{product.unitprice}} TND <i class="fa fa-plus-square"></i></button>
+              <button disabled class="mat-card-action-quantity" mat-button>{{product.quantity}} P </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

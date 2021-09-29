@@ -1,0 +1,79 @@
+<div class="dialog-header accent-background">
+    <span class="dialog-header-title">Edit Section</span>
+    <hr>
+</div>
+<div class="dialog-content">
+    <div style="margin-bottom: 5px; border-style: solid;border-width: 2px;border-radius: 5px;border-color: rgb(194, 194, 194);">
+        <h3>Section Management</h3>
+        <hr style="width: 80%; color: rgb(194, 194, 194);">
+        <div class="mb-3 form-group" style="margin-left: 10px;">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" [placeholder]="data.section.name" id="sectionname" [(ngModel)]="data.section.name" name="name"
+                    aria-describedby="nameHelp">
+            <div id="nameHelp" class="form-text">here you change the name of this section.</div>
+        </div>
+        <button class="btn btn-info" style="width:40%;margin-bottom: 5px; margin-left: 10px;" mat-raised-button [mat-dialog-close]="true" (click)="saveSectionName()">save</button>
+    </div>
+<div style="margin-bottom: 5px; border-style: solid;border-width: 2px;border-radius: 5px;border-color: rgb(194, 194, 194);">
+    <h3>Product Management</h3>
+    <hr style="width: 80%; color: rgb(194, 194, 194);">
+    <div class="mb-3" style="margin-left: 10px;">
+        <label for="product" class="form-label">ProductID</label>
+        <input type="number" class="form-control" id="productID" [(ngModel)]="productID" name="productID" [value]="0"
+            aria-describedby="quantityHelp">
+        <div id="quantityHelp" class="form-text">here you type the id of the product you want to add/remove to/from this section.</div>
+    </div>
+    <div style="margin-bottom: 5px; margin-left: 10px;">
+        <button class="btn btn-info" (click)="addProduct()" style="width:40%; margin-right: 5px;"> Add this product</button>
+        <button class="btn btn-warning" (click)="removeProduct()" style="width:40%;"> Remove this product</button>
+    </div>
+</div>
+<div class="row" style="margin-left: 0px; border-style: solid;border-width: 2px;border-radius: 5px;border-color: rgb(194, 194, 194); width: 100%;">
+    <h3>Product Display</h3>
+    <hr style="width: 80%; color: rgb(194, 194, 194);">
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="white-box">
+            <div class="d-md-flex mb-3">
+                <h3 class="box-title mb-0">Products</h3>
+                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                    <select class="form-select shadow-none row border-top">
+                        <option>March 2021</option>
+                        <option>April 2021</option>
+                        <option>May 2021</option>
+                        <option>June 2021</option>
+                        <option>July 2021</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table no-wrap">
+                    <thead>
+                        <tr>
+                            <th class="border-top-0">#</th>
+                            <th class="border-top-0">Logo</th>
+                            <th class="border-top-0">Name</th>
+                            <th class="border-top-0">Quantity</th>
+                            <th class="border-top-0">Unit Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of data.section.products">
+                            <td>{{data.index}}</td>
+                            <td class="txt-oflo"><img width="50px" height="50px"
+                                    [src]="data.logo">
+                            </td>
+                            <td>{{data.name}}</td>
+                            <td class="txt-oflo">{{data.quantity}}</td>
+                            <td><span class="text-success">{{data.unitprice}}TD</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="dialog-footer">
+    <button class="btn btn-warning" style="width:40%; margin-right: 5%;" mat-raised-button [mat-dialog-close]="false">exit</button>
+</div>

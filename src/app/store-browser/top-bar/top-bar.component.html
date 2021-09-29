@@ -1,0 +1,54 @@
+<mat-toolbar>
+    <a style="color: white;" routerLink="/browse">
+        <b class="logo-icon text-warning" style="margin-right: 5px;">
+        <!-- Dark Logo icon -->
+            TuniPost
+        </b>
+        <span class="logo-text">Browse</span>
+    </a>
+    <span class="example-spacer"></span>
+        <a style="cursor: pointer;" class="profile-pic" (click)="toogleClicked()">
+            <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar2.png" alt="user-img" width="36"
+            style="border-radius: 50%;">
+            <span class="text-white font-small" style="font-size: 14px;">Youssef</span>
+        </a>    
+        <div class="expandable-content" *ngIf="clicked">
+            <div class="row">
+                <a style="cursor: pointer;">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <span class="hide-menu">Profile</span>    
+                </a>
+            </div>
+            <hr>
+            <div class="row">
+                <a style="cursor: pointer;">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <span class="hide-menu">Liked</span>    
+                </a>
+            </div>
+            <hr>
+            <div class="row">
+                <a style="cursor: pointer;">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="hide-menu">Store</span>    
+                </a>
+            </div>
+            <hr>
+            <div class="row">
+                <a style="cursor: pointer;">
+                    <i class="fa fa-credit-card" aria-hidden="true"></i>
+                    <span class="hide-menu">Orders</span>    
+                </a>
+            </div>
+            <hr>
+            <div class="row">
+                <a style="cursor: pointer;">
+                    <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                    <span class="hide-menu">LogOut</span>    
+                </a>
+            </div>
+        </div>
+</mat-toolbar>
+<div class="content-browse" (click)="outOfFocus()">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,56 @@
+<div class="dialog-header accent-background">
+    <span class="dialog-header-title">Order Details</span>
+    <hr>
+</div>
+<div class="dialog-content">
+    <div class="row" style="margin-top: 20px;">
+        <div class="col" style="font-size: 30px;">Total Price :</div>
+        <div class="col" style="font-size: 25px;"><span class="text-success">{{data.order.totalprice}} TND</span></div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col" style="font-size: 30px;">Shippment Fee :</div>
+        <div class="col" style="font-size: 25px;"><span class="text-warning">{{data.order.shippmentfee}} TND</span></div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col" style="font-size: 30px;">Order Status :</div>
+        <div class="col" style="font-size: 25px;"><span class="text-primary">{{data.order.status}} </span></div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="white-box">
+            <div class="d-md-flex mb-3">
+                <h3 class="box-title mb-0">Products</h3>
+                
+            </div>
+            <div class="table-responsive">
+                <table class="table no-wrap">
+                    <thead>
+                        <tr>
+                            <th class="border-top-0">#</th>
+                            <th class="border-top-0">Logo</th>
+                            <th class="border-top-0">Name</th>
+                            <th class="border-top-0">Quantity</th>
+                            <th class="border-top-0">Unit Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let batch of data.order.batches">
+                            <td>{{batch.product.index}}</td>
+                            <td class="txt-oflo"><img width="50px" height="50px"
+                                    [src]="batch.product.logo">
+                            </td>
+                            <td>{{batch.product.name}}</td>
+                            <td class="txt-oflo">{{batch.quantity}}</td>
+                            <td><span class="text-success">{{batch.product.unitprice}} TND</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="dialog-footer">
+    <button class="btn btn-danger" style="width:40%; margin-right: 5%;" mat-raised-button [mat-dialog-close]="false">cancel Order</button>
+    <button class="btn btn-warning" style="width:40%; margin-right: 5%;" mat-raised-button [mat-dialog-close]="false">exit</button>
+</div>
